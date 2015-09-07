@@ -1,0 +1,11 @@
+<% cache(@recipe) do %>
+  <h1><%= md @recipe.title %></h1>
+
+  <p><%= md @recipe.description %></p>
+
+  <h4>Ingredients</h4>
+  <p><%= md @recipe.ingredients %></p>
+
+  <h4>Method</h4>
+  <p><%= md @recipe.method %></p>
+<% end %>

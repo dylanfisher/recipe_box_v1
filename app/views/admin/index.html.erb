@@ -1,0 +1,7 @@
+<h1>Admin Index</h1>
+
+<% @records.each do |record| %>
+  <%= link_to polymorphic_path([record.name]) do %>
+    <%= record.name.titleize %>
+  <% end %>
+<% end %>
