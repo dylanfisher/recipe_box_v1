@@ -36,6 +36,8 @@ gem 'puma'
 # gem 'capistrano-rails', group: :development
 
 # Rails generator which allows to scaffold admin controllers, views with proper (non-namespaced) models, helpers, tests and routes
+# Create admin scaffold: bin/rails g admin:scaffold_controller Post title:string content:text
+# Generate model: bin/rails g model Post title:string content:text
 gem 'rails-admin-scaffold'
 
 gem 'friendly_id', '~> 5.1.0'
