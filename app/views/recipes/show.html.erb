@@ -1,11 +1,13 @@
 <% cache(@recipe) do %>
   <div class="recipe--show">
     <div class="recipe--show__info">
-      This is a Vegan treat posted by <%= recipe_user(@recipe) %>. It is good for sexy time, guilt-free snacking, and sensual indulgences.
+      This is a Vegan treat posted by <%= recipe_user(@recipe) %>. It is good for <%= recipe_adjectives(@recipe) %>.
     </div>
     <nav class="recipe--show__nav">
       <h1 class="recipe--show__title"><%= md @recipe.title %></h1>
       <%= content_tag(:div, md(@recipe.caption), class: 'recipe--show__caption') if @recipe.caption %>
+      <%= link_to(raw('&larr;'), recipe_path(@recipe.previous), class: 'adjacent-record adjacent-record--left color--default', title: @recipe.previous.title) if @recipe.previous %>
+      <%= link_to(raw('&rarr;'), recipe_path(@recipe.next), class: 'adjacent-record adjacent-record--right color--default', title: @recipe.next.title) if @recipe.next %>
       <div class="spacer"></div>
     </nav>
 
@@ -19,4 +21,8 @@
       <p class="recipe--show__procedure__items"><%= md @recipe.method %></p>
     </div>
   </div>
+
+  <% content_for :footer_links do %>
+    <%= content_tag(:div, link_to('Edit recipe', edit_admin_recipe_path)) %>
+  <% end %>
 <% end %>

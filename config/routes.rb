@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   # ADMIN
 
-  get '/admin', to: 'admin#index'
+  get '/admin', to: 'admin#index', as: 'admin'
   namespace :admin do
     resources :recipes, :concerns => :paginatable
   end

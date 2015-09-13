@@ -12,6 +12,19 @@
   <% end %>
 
   <%= f.input :title %>
+
+  <div class="input">
+    <div>Adjectives</div>
+    <div class="recipe__adjectives">
+      <%= f.simple_fields_for :adjectives do |adjective| %>
+        <%= render 'adjective_fields', f: adjective %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add adjective', f, :adjectives %>
+      </div>
+    </div>
+  </div>
+
   <%= f.input :meal_type_id, collection: MealType.all, include_blank: false %>
   <%= f.input :caption %>
   <%= f.input :description %>

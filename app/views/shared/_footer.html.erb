@@ -1,0 +1,4 @@
+<footer class="footer">
+  <%= content_tag(:div, link_to('Admin area', admin_path)) unless admin_area? %>
+  <%= content_for :footer_links %>
+</footer>

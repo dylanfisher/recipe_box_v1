@@ -26,6 +26,7 @@
 
   &__nav {
     @extend %module;
+    position: relative;
   }
 
   &__title {

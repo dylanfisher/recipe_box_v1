@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
@@ -50,6 +49,9 @@ gem 'kaminari'
 
 # Loads environment variables from `.env`
 gem 'dotenv-rails'
+
+# Dynamic nested forms using jQuery made easy https://github.com/nathanvda/cocoon
+gem "cocoon"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

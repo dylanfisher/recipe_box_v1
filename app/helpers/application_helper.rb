@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def body_class(content='')
-    classes = "admin-area " if controller_path.split('/').first == 'admin'
+    classes = "admin-area " if controller_path.split('/').first == 'admin' || ''
     classes += "controller--#{controller_path.gsub('/', '-')} " if try(:controller_path)
     classes += "action--#{action_name} " if try(:action_name)
     classes += "#{content} " if content.present?
