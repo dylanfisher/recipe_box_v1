@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.5.2'
+gem 'pundit', '~> 1.0.1'
 
 gem "autoprefixer-rails"
 

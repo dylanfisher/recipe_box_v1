@@ -4,17 +4,20 @@ class Admin::RecipesController < ApplicationController
   # GET /admin/recipes
   # GET /admin/recipes.json
   def index
-    @recipes = Recipe.page(params[:page])
+    @recipes = policy_scope(Recipe).page(params[:page])
+    authorize @recipes
   end
 
   # GET /admin/recipes/1
   # GET /admin/recipes/1.json
   def show
+    authorize @recipe
   end
 
   # GET /admin/recipes/new
   def new
     @recipe = Recipe.new
+    authorize @recipe
   end
 
   # GET /admin/recipes/1/edit
@@ -25,6 +28,7 @@ class Admin::RecipesController < ApplicationController
   # POST /admin/recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    authorize @recipe
 
     respond_to do |format|
       if @recipe.save
@@ -40,6 +44,7 @@ class Admin::RecipesController < ApplicationController
   # PATCH/PUT /admin/recipes/1
   # PATCH/PUT /admin/recipes/1.json
   def update
+    authorize @recipe
     respond_to do |format|
       if @recipe.update(recipe_params)
         format.html { redirect_to [:admin, @recipe], notice: 'Recipe was successfully updated.' }
@@ -54,6 +59,7 @@ class Admin::RecipesController < ApplicationController
   # DELETE /admin/recipes/1
   # DELETE /admin/recipes/1.json
   def destroy
+    authorize @recipe
     @recipe.destroy
     respond_to do |format|
       format.html { redirect_to admin_recipes_url, notice: 'Recipe was successfully destroyed.' }
