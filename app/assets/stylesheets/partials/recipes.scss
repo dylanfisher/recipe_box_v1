@@ -13,13 +13,17 @@
     @extend %medium-serif;
   }
 
-  &.meal-type--breakfast a { color: $meal-breakfast; }
-  &.meal-type--main a      { color: $meal-main; }
-  &.meal-type--tapas a     { color: $meal-tapas; }
-  &.meal-type--treat a     { color: $meal-treat; }
+  &.meal-type--breakfast a { color: $color-breakfast; }
+  &.meal-type--main a      { color: $color-main; }
+  &.meal-type--tapas a     { color: $color-tapas; }
+  &.meal-type--treat a     { color: $color-treat; }
 }
 
 .recipe--show {
+  &__info {
+    @extend %module;
+  }
+
   &__nav {
     @extend %module;
   }
@@ -27,6 +31,9 @@
   &__title {
     @extend %large-serif;
     text-align: center;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__caption {
@@ -42,6 +49,6 @@
 
   &__ingredients__title,
   &__procedure__title {
-    @extend %color--accent;
+    @extend .color--accent;
   }
 }

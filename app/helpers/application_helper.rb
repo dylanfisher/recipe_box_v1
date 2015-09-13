@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def body_class(content='')
+    classes = "admin-area " if controller_path.split('/').first == 'admin'
+    classes += "controller--#{controller_path.gsub('/', '-')} " if try(:controller_path)
+    classes += "action--#{action_name} " if try(:action_name)
+    classes += "#{content} " if content.present?
+    "class='#{classes}'".html_safe
+  end
+
   def record
     instance_variable_get("@#{controller_name.singularize}")
   end
@@ -44,6 +52,10 @@ module ApplicationHelper
       svg['class'] = options[:class]
     end
     doc.to_html.html_safe
+  end
+
+  def show_header_info?
+    return true if action_name != 'show'
   end
 
 end

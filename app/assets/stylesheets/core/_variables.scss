@@ -6,20 +6,24 @@ $bangla: 'bangla', serif;
 $blue: #3C42F2;
 $teal: #A6EDFE;
 $orange: #FD6C5B;
-$yellow: #FEF270;
+$yellow: #FED731;
+$yellow-light: #FEF270;
 $purple: #EFC4FD;
 $pink: #FEC3CA;
 $green: #A8FD64;
 
 // Color assignments
 $page-background: $blue;
-$accent-color: #fff;
-$meal-breakfast: $yellow;
-$meal-main: $green;
-$meal-tapas: $pink;
-$meal-treat: $orange;
+
+$color-accent: #fff;
+$color-user: $yellow-light;
+$color-breakfast: $yellow;
+$color-main: $green;
+$color-tapas: $pink;
+$color-treat: $orange;
 
 // Spacing
+$space-medium: 25px;
 $space-large: 50px;
 
 $module-space: 80px;

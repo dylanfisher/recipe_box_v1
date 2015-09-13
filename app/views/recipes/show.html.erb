@@ -1,5 +1,8 @@
 <% cache(@recipe) do %>
   <div class="recipe--show">
+    <div class="recipe--show__info">
+      This is a Vegan treat posted by <%= recipe_user(@recipe) %>. It is good for sexy time, guilt-free snacking, and sensual indulgences.
+    </div>
     <nav class="recipe--show__nav">
       <h1 class="recipe--show__title"><%= md @recipe.title %></h1>
       <%= content_tag(:div, md(@recipe.caption), class: 'recipe--show__caption') if @recipe.caption %>
