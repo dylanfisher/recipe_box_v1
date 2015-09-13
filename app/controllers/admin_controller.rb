@@ -14,4 +14,5 @@ class AdminController < ApplicationController
         route.name == "admin_#{$1}"
     end
   end
+
 end
