@@ -28,7 +28,19 @@
   <%= f.input :meal_type_id, collection: MealType.all, include_blank: false %>
   <%= f.input :caption %>
   <%= f.input :description %>
-  <%= f.input :ingredients %>
+
+  <div class="input">
+    <div>Ingredients</div>
+    <div class="recipe__ingredients">
+      <%= f.simple_fields_for :ingredients do |ingredient| %>
+        <%= render 'ingredient_fields', f: ingredient %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add ingredient', f, :ingredients %>
+      </div>
+    </div>
+  </div>
+
   <%= f.input :method %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit %>

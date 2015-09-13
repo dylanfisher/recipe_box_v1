@@ -23,4 +23,6 @@
 @import "vendor/**/*";
 
 // Admin
-@import "admin/**/*";
+.admin-area {
+  @import "admin/**/*";
+}

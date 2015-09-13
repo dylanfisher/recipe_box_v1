@@ -10,4 +10,8 @@ module RecipesHelper
     text.to_sentence.html_safe
   end
 
+  def recipe_good_for(recipe)
+    "It is good for #{recipe_adjectives(recipe)}.".html_safe if recipe.adjectives.any?
+  end
+
 end

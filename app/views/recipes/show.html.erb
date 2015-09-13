@@ -1,7 +1,7 @@
 <% cache(@recipe) do %>
   <div class="recipe--show">
     <div class="recipe--show__info">
-      This is a Vegan treat posted by <%= recipe_user(@recipe) %>. It is good for <%= recipe_adjectives(@recipe) %>.
+      This is a Vegan treat posted by <%= recipe_user(@recipe) %>. <%= recipe_good_for(@recipe) %>
     </div>
     <nav class="recipe--show__nav">
       <h1 class="recipe--show__title"><%= md @recipe.title %></h1>
@@ -11,14 +11,25 @@
       <div class="spacer"></div>
     </nav>
 
-    <div class="recipe--show__ingredients">
+    <div class="recipe--show__ingredients__wrapper">
       <h4 class="recipe--show__ingredients__title">Ingredients</h4>
-      <p class="recipe--show__ingredients__items"><%= md @recipe.ingredients %></p>
+      <div class="recipe--show__ingredients">
+        <% @recipe.ingredients.each do |ingredient| %>
+          <div class="recipe--show__ingredient">
+            <div class="recipe--show__ingredient__quantity">
+              <%= ingredient.quantity %>
+            </div>
+            <div class="recipe--show__ingredient__item">
+              <%= ingredient.item %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
 
-    <div class="recipe--show__procedure">
+    <div class="recipe--show__procedure__wrapper">
       <h4 class="recipe--show__procedure__title">procedure</h4>
-      <p class="recipe--show__procedure__items"><%= md @recipe.method %></p>
+      <div class="recipe--show__procedure__items"><%= md @recipe.method %></div>
     </div>
   </div>
 

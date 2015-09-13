@@ -19,7 +19,7 @@
       <tr>
         <td><%= recipe.title %></td>
         <td><%= recipe.caption %></td>
-        <td><%#= recipe.user %></td>
+        <td><%= recipe.user.first_name %></td>
         <td><%= link_to 'Show', [:admin, recipe] %></td>
         <td><%= link_to 'Edit', edit_admin_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', [:admin, recipe], method: :delete, data: { confirm: 'Are you sure?' } %></td>

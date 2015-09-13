@@ -43,13 +43,35 @@
     text-align: center;
   }
 
-  &__ingredients,
-  &__procedure {
+  &__ingredients__wrapper,
+  &__procedure__wrapper {
     @extend %module;
+  }
+
+  &__ingredients__wrapper {
+    max-width: 600px;
   }
 
   &__ingredients__title,
   &__procedure__title {
     @extend .color--accent;
+  }
+
+  &__ingredient {
+    @extend %ibfix;
+  }
+
+  &__ingredient__quantity,
+  &__ingredient__item {
+    @extend %regular-sans;
+    display: inline-block;
+  }
+
+  &__ingredient__quantity {
+    width: 25%;
+  }
+
+  &__ingredient__item {
+    width: 75%;
   }
 }
