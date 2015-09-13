@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # RESOURCES
 
-  get '/recipes/:meal_type', to: 'recipes#index', as: 'meal_types'
+  # get '/recipes/:meal_type', to: 'recipes#meal_type', as: 'meal_types'
   resources :recipes, only: [:index, :show]
 
   # ADMIN

@@ -1,0 +1,47 @@
+.recipes {
+  @extend %row;
+  text-align: center;
+}
+
+.recipe {
+  @extend %module;
+  display: inline-block;
+  width: 300px;
+  text-align: center;
+
+  &__title {
+    @extend %medium-serif;
+  }
+
+  &.meal-type--breakfast a { color: $meal-breakfast; }
+  &.meal-type--main a      { color: $meal-main; }
+  &.meal-type--tapas a     { color: $meal-tapas; }
+  &.meal-type--treat a     { color: $meal-treat; }
+}
+
+.recipe--show {
+  &__nav {
+    @extend %module;
+  }
+
+  &__title {
+    @extend %large-serif;
+    text-align: center;
+  }
+
+  &__caption {
+    @extend %medium-sans;
+    margin-top: $space-large;
+    text-align: center;
+  }
+
+  &__ingredients,
+  &__procedure {
+    @extend %module;
+  }
+
+  &__ingredients__title,
+  &__procedure__title {
+    @extend %color--accent;
+  }
+}

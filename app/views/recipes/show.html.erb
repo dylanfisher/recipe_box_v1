@@ -1,11 +1,19 @@
 <% cache(@recipe) do %>
-  <h1><%= md @recipe.title %></h1>
+  <div class="recipe--show">
+    <nav class="recipe--show__nav">
+      <h1 class="recipe--show__title"><%= md @recipe.title %></h1>
+      <%= content_tag(:div, md(@recipe.caption), class: 'recipe--show__caption') if @recipe.caption %>
+      <div class="spacer"></div>
+    </nav>
 
-  <p><%= md @recipe.description %></p>
+    <div class="recipe--show__ingredients">
+      <h4 class="recipe--show__ingredients__title">Ingredients</h4>
+      <p class="recipe--show__ingredients__items"><%= md @recipe.ingredients %></p>
+    </div>
 
-  <h4>Ingredients</h4>
-  <p><%= md @recipe.ingredients %></p>
-
-  <h4>Method</h4>
-  <p><%= md @recipe.method %></p>
+    <div class="recipe--show__procedure">
+      <h4 class="recipe--show__procedure__title">procedure</h4>
+      <p class="recipe--show__procedure__items"><%= md @recipe.method %></p>
+    </div>
+  </div>
 <% end %>

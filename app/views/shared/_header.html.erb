@@ -1,3 +1,10 @@
-<header>
-  <%= embedded_svg('recipe_box_logo.svg', class: 'recipe-box-logo') %>
+<header class="header">
+  <%= link_to(embedded_svg('recipe_box_logo.svg', class: 'recipe-box-logo'), root_path) %>
+  <div class="about-wrapper">
+    An open source collection of vegetarian recipes.
+    <div class="about-wrapper__links">
+      <%= link_to('Info', '#', class: 'link--accent') %>
+      <%= link_to('Submit', '#', class: 'link--accent') %>
+    </div>
+  </div>
 </header>

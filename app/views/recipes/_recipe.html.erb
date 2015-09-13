@@ -1,3 +1,7 @@
 <% cache(recipe) do %>
-  <%= link_to(md(recipe.title), recipe) %>
+  <div class="recipe <%= meal_type_class(recipe) %>">
+    <h4 class="recipe__title">
+      <%= link_to(md(recipe.title), recipe) %>
+    </h4>
+  </div>
 <% end %>

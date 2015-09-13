@@ -1,0 +1,12 @@
+.spacer {
+  margin-top: $space-large;
+  text-align: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 4px;
+    width: 250px;
+    background: #000;
+  }
+}

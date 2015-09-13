@@ -1,0 +1,7 @@
+@mixin break($size) {
+  @if ($size == hand){
+    @media (max-width: $break-hand) {
+      @content;
+    }
+  }
+}

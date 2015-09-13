@@ -1,7 +1,9 @@
 <% MealType.all.each do |meal_type| %>
-  <%= link_to(meal_type.name, meal_types_path(meal_type: meal_type.slug)) %>
+  <%#= link_to(meal_type.name, meal_types_path(meal_type: meal_type.slug)) %>
 <% end %>
 
 <% cache(cache_key_for(Recipe)) do %>
-  <%= render @recipes %>
+  <div class="recipes">
+    <%= render @recipes %>
+  </div>
 <% end %>

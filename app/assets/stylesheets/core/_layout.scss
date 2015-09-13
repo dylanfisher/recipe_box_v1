@@ -1,0 +1,24 @@
+$total-columns: 6;
+
+%module {
+  margin-bottom: $module-space;
+}
+
+%row {
+  @extend %ibfix;
+}
+
+%col {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@mixin col($number, $total) {
+  @extend %col;
+  width: $number / $total * 100%;
+}
+
+@for $col from 1 through $total-columns {
+  .col#{$col} { @include col($col, $total-columns) }
+}

@@ -10,10 +10,12 @@
 }
 
 @font-face {
-  font-family: 'HelveticaNeue';
+  font-family: 'HelveticaNeueRegular';
   src: font-url('HelveticaNeue/HelveticaNeue.eot');
-  src: font-url('HelveticaNeue/HelveticaNeue.eot') format('embedded-opentype'),
+  src: font-url('HelveticaNeue/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
        font-url('HelveticaNeue/HelveticaNeue.woff') format('woff'),
        font-url('HelveticaNeue/HelveticaNeue.ttf') format('truetype'),
-       font-url('HelveticaNeue/HelveticaNeue.svg#HelveticaNeue') format('svg');
+       font-url('HelveticaNeue/HelveticaNeue.svg#HelveticaNeueRegular') format('svg');
+  font-weight: 100;
+  font-style: normal;
 }

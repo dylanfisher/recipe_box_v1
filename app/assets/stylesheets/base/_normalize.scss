@@ -10,6 +10,11 @@ html {
   font-family: $helvetica; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 /**
@@ -137,6 +142,11 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+p {
   margin: 0;
 }
 
@@ -427,4 +437,8 @@ table {
 td,
 th {
   padding: 0;
+}
+
+div {
+  vertical-align: top;
 }

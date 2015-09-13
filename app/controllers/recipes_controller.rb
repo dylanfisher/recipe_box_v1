@@ -1,7 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
-    @recipes = MealType.friendly.find(params[:meal_type]).recipes if params[:meal_type]
+    @recipes = Recipe.recent.all
+    if (params[:order] == 'asc')
+      @recipes = Recipe.by_title.all
+    elsif (params[:order] == 'desc')
+      @recipes = Recipe.by_title_desc.all
+    end
   end
 
   def show
