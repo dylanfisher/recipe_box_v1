@@ -1,13 +1,16 @@
 <% cache(@recipe) do %>
   <div class="recipe--show">
     <div class="recipe--show__info">
-      This is a Vegan treat posted by <%= recipe_user(@recipe) %>. <%= recipe_good_for(@recipe) %>
+      This is a <%= link_to @recipe.cuisine.name, '#' %>
+      <%= link_to @recipe.meal_type.name, '#', class: "color--#{@recipe.meal_type.slug}" %>
+      posted by <%= recipe_user(@recipe) %>.
+      <%= recipe_good_for(@recipe) %>
     </div>
     <nav class="recipe--show__nav">
       <h1 class="recipe--show__title"><%= md @recipe.title %></h1>
       <%= content_tag(:div, md(@recipe.caption), class: 'recipe--show__caption') if @recipe.caption %>
-      <%= link_to(raw('&larr;'), recipe_path(@recipe.previous), class: 'adjacent-record adjacent-record--left color--default', title: @recipe.previous.title) if @recipe.previous %>
-      <%= link_to(raw('&rarr;'), recipe_path(@recipe.next), class: 'adjacent-record adjacent-record--right color--default', title: @recipe.next.title) if @recipe.next %>
+      <%= link_to(raw('<span>&larr;</span>'), recipe_path(@recipe.previous), class: 'adjacent-record adjacent-record--left color--default') if @recipe.previous %>
+      <%= link_to(raw('<span>&rarr;</span>'), recipe_path(@recipe.next), class: 'adjacent-record adjacent-record--right color--default') if @recipe.next %>
       <div class="spacer"></div>
     </nav>
 

@@ -4,8 +4,9 @@ class Recipe < ActiveRecord::Base
 
   validates_presence_of :title, :description, :method
 
-  belongs_to :meal_type
   belongs_to :user
+  belongs_to :meal_type
+  belongs_to :cuisine
   has_many :adjectives
   has_many :ingredients
 
@@ -23,4 +24,5 @@ class Recipe < ActiveRecord::Base
   def previous
     self.class.unscoped.where("updated_at >= ? AND id != ?", updated_at, id).order("updated_at ASC").first
   end
+
 end

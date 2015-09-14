@@ -14,9 +14,16 @@
 .adjacent-record {
   font-family: serif;
   position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
+  height: 100%;
+  top: 0;
   font-size: 38px;
+
+  span {
+    position: relative;
+    display: block;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 
   &--left {
     left: 0;
